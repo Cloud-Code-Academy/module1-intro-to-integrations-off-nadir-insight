@@ -12,8 +12,21 @@ public class JSONPlaceholderExercise {
         request.setEndpoint(BASE_URL + '/posts/' + postId);
         request.setMethod('GET');
         Http http = new Http();
-        HttpResponse response = http.send(request);
-        return response.getBody();
+        
+        HttpResponse response;
+        
+        try {
+            response = http.send(request);
+            Integer statusCode = response.getStatusCode();
+            if (statusCode >= 200 && statusCode < 300) {
+                return response.getBody();
+            } else {
+                return 'Error: Status Code ' + statusCode + ', Response Body: ' + response.getBody();
+            }
+            
+        } catch (CalloutException ex) {
+            return 'Callout Exception: ' + ex.getMessage();
+        }
     }
     
     /**
@@ -38,9 +51,20 @@ public class JSONPlaceholderExercise {
         request.setBody(jsonBody);
 
         Http http = new Http();
-        HttpResponse response = http.send(request);
+        HttpResponse response;
 
-        return response.getBody();
+        try {
+            response = http.send(request);
+            Integer statusCode = response.getStatusCode();
+            if (statusCode >= 200 && statusCode < 300) {
+                return response.getBody();
+            } else {
+                return 'Error: Status Code ' + statusCode + ', Response Body: ' + response.getBody();
+            }
+        } catch (CalloutException ex) {
+            return 'Callout Exception: ' + ex.getMessage();
+        }
+
     }
     
     /**
@@ -67,8 +91,19 @@ public class JSONPlaceholderExercise {
         request.setBody(jsonBody);
 
         Http http = new Http();
-        HttpResponse response = http.send(request);
-        return response.getBody();
+        HttpResponse response;
+
+        try {
+            response = http.send(request);
+            Integer statusCode = response.getStatusCode();
+            if (statusCode >= 200 && statusCode < 300) {
+                return response.getBody();
+            } else {
+                return 'Error: Status Code ' + statusCode + ', Response Body: ' + response.getBody();
+            }
+        } catch (CalloutException ex) {
+            return 'Callout Exception: ' + ex.getMessage();            
+        }
     }
     
     /**
@@ -91,9 +126,19 @@ public class JSONPlaceholderExercise {
         request.setBody(jsonBody);
 
         Http http = new Http();
-        HttpResponse response = http.send(request);
-
-        return response.getBody();
+        HttpResponse response;
+        
+        try {
+            response = http.send(request);
+            Integer statusCode = response.getStatusCode();
+            if (statusCode >= 200 && statusCode < 300) {
+                return response.getBody();
+            } else {
+                return 'Error: Status Code ' + statusCode + ', Response Body: ' + response.getBody();
+            }
+        } catch (CalloutException ex) {
+            return 'Callout Exception: ' + ex.getMessage();
+        }
     }
     
     /**
