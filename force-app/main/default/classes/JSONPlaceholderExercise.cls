@@ -11,6 +11,7 @@ public class JSONPlaceholderExercise {
         HttpRequest request = new HttpRequest();
         request.setEndpoint(BASE_URL + '/posts/' + postId);
         request.setMethod('GET');
+        request.setTimeout(15000);
         Http http = new Http();
         
         HttpResponse response;
@@ -41,6 +42,7 @@ public class JSONPlaceholderExercise {
         HttpRequest request = new HttpRequest();
         request.setEndpoint(BASE_URL + '/posts');
         request.setMethod('PUT');
+        request.setTimeout(15000);
         
         Map<String, Object> jsonMap = new Map<String, Object>{
             'title' => title,
@@ -80,6 +82,7 @@ public class JSONPlaceholderExercise {
         HttpRequest request = new HttpRequest();
         request.setEndpoint(BASE_URL + '/posts/' + postId);
         request.setMethod('PUT');
+        request.setTimeout(15000);
         
         Map<String, Object> jsonMap = new Map<String, Object>{
             'title' => title,
@@ -117,6 +120,7 @@ public class JSONPlaceholderExercise {
         HttpRequest request = new HttpRequest();
         request.setEndpoint(BASE_URL + '/posts/' + postId);
         request.setMethod('PATCH');
+        request.setTimeout(15000);
         
         Map<String, Object> jsonMap = new Map<String, Object>{
             'title' => title
@@ -151,6 +155,7 @@ public class JSONPlaceholderExercise {
         HttpRequest request = new HttpRequest();
         request.setEndpoint(BASE_URL + '/posts/' + postId);
         request.setMethod('DELETE');
+        request.setTimeout(15000);
 
         Http http = new Http();
         HttpResponse response = http.send(request);
